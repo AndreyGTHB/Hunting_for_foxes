@@ -14,6 +14,8 @@ while (foxes != 0):
     y = input ('y - coordinate:')
     x_int = int (x)
     y_int = int (y)
+    x_int -= 1
+    y_int -= 1
     see = 0
     if (field [x_int][y_int] == 1):
         print ('FOX!!!')
@@ -21,7 +23,7 @@ while (foxes != 0):
         continue
     else:
         for i in range (len (field)):
-            if (field [i][y_int] == 1):
+            if field[i][y_int] == 1:
                 see += 1
             if (field [x_int][i] == 1):
                 see += 1
@@ -37,4 +39,7 @@ while (foxes != 0):
                 see += 1
                 x_int += 1
                 y_int += 1
-    print ('See:', end = see)
+            x_int += 1
+            y_int += 1
+    print ('See:', end =str (see))
+    input ()
